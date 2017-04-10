@@ -8,8 +8,15 @@ def buyLotsOfFruit(orderList):
 
     Returns cost of order
     """
+    totalCost = 0;
+    for tuple in orderList:
+    	quantity = tuple[1]
+    	name 	 = tuple[0]
+    	perFruitPrice = fruitPrices[name]
+    	totalCost = totalCost + quantity * perFruitPrice
 
-    " YOUR CODE HERE "
+    return totalCost
+
 
 orderList = [('apples', 2), ('pears', 3), ('limes', 4)]
 print('Cost of', orderList, 'is', buyLotsOfFruit(orderList))
