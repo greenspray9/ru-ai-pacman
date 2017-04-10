@@ -5,13 +5,11 @@ fruitPrices = {'apples': 2.00, 'oranges': 1.50, 'pears': 1.75,
 def buyLotsOfFruit(orderList):
 
     totalCost = 0;
-    for tuple in orderList:
-        quantity = tuple[1]
-        name     = tuple[0]
+    for name,quantity in orderList:
 
         if quantity < 0:
             print('Wrong quantity :', quantity)
-        elif not(name in fruitPrices):
+        elif name not in fruitPrices:
             print(name ,'not in list')
         else:
             perFruitPrice = fruitPrices[name]
