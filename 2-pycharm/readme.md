@@ -35,7 +35,7 @@ assignment 1 from week 1.
 
 #### Loading the files into PyCharm
 
-This is a repitition of the instructions from the last topic.
+This is a repetition of the instructions from the last topic.
 
 After downloading and extracting [the course material archive file](https://github.com/MareinK/ru-ai-pacman/archive/master.zip),
  you should open it as a new project in PyCharm. To do so, choose `File -> Open...` in PyCharm
