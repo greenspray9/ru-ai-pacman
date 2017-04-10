@@ -14,10 +14,14 @@ def shopSmart(orderList, fruitShops):
         orderList: List of (fruit, numPound) tuples
         fruitShops: List of FruitShops
     """
-    "*** YOUR CODE HERE ***"
-    return None
+    costList = []
+    for shop in fruitShops:
+        eachShopCost = (shop.getPriceOfOrder(orderList) )
+        costList.append(eachShopCost)
+    return  fruitShops[ costList.index(min(costList)) ]
 
-fruits1 = {'apples': 2.0, 'oranges':1.0}
+
+fruits1 = {'apples': 2.0, 'oranges': 1.0}
 fruits2 = {'apples': 1.0, 'oranges': 5.0}
 shop1 =  shop.FruitShop('shop1',fruits1)
 shop2 = shop.FruitShop('shop2',fruits2)

@@ -15,7 +15,8 @@ class AlbertHeijn():
     def getPosition(self):
         return (self.x, self.y)
 
-
+    def getName(self):
+        return self.name
 class TerminalKamer():
     '''
     A class to represent a Terminal Kamer
@@ -37,13 +38,16 @@ def distance(xy1, xy2):
 
 def closestAHDistance(tk, ahs):
     '''
-    Returns the distance to the Albert Heijn in 'ahs' that is closest to 'tk'
+    Returns the (distance to the Albert Heijn in 'ahs' that is closest to 'tk',Name of the AH) 
     '''
+
     tkpos = tk.getPosition()
-    ahPositions = [ah.getPosition for ah in ahs]
+    ahPositions = [ah.getPosition() for ah in ahs]
     ahDistances = [distance(tkpos, ahpos) for ahpos in ahPositions]
+
     closestAHDistance = min(ahDistances)
-    return closestAHDistance
+
+    return closestAHDistance, ahDistances.index(closestAHDistance)
 
 'some Albert Heijns in Nijmegen'
 albertheijns = [
@@ -56,5 +60,8 @@ albertheijns = [
 'the TK'
 tk = TerminalKamer(75, 56)
 
+closestAH = closestAHDistance(tk, albertheijns)
+closestAHDist = closestAH[0]
+closestAHName = albertheijns[closestAH[1]].getName()
 'print the closest distance to an Albert Heijn from the TK'
-print(closestAHDistance(tk, albertheijns))
+print("The closest distance to an Albert Heijn from the TK is %s at %s" % (closestAHDist, closestAHName))
