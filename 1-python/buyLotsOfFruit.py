@@ -7,10 +7,10 @@ def buyLotsOfFruit(orderList):
     totalCost = 0;
     for tuple in orderList:
         quantity = tuple[1]
-        name 	 = tuple[0]
+        name     = tuple[0]
 
         if quantity < 0:
-            print('wrong quantity of', quantity)
+            print('Wrong quantity :', quantity)
         elif not(name in fruitPrices):
             print(name ,'not in list')
         else:
